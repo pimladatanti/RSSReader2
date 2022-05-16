@@ -1,0 +1,99 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.zybooks.rssreader2"
+        minSdk 25
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        compose true
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    composeOptions {
+        //def compose_version = '1.2.0-alpha06'
+        kotlinCompilerExtensionVersion compose_version
+
+
+        //def kotlin_version = '1.6.10'
+    }
+
+
+    configurations {
+
+    }
+
+    dependencies {
+
+        //implementation 'androidx.core:core-ktx:1.7.0'
+        implementation 'androidx.appcompat:appcompat:1.4.1'
+        implementation 'com.google.android.material:material:1.5.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+        implementation 'androidx.wear.compose:compose-foundation:1.0.0-alpha21'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+        implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+        implementation 'com.squareup.retrofit2:converter-simplexml:2.9.0'
+
+        //def lifecycle_version = "2.2.0"
+
+        //implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+        //implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
+
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+        implementation "androidx.compose.runtime:runtime:$compose_version"
+        implementation "androidx.compose.ui:ui:$compose_version"
+        implementation "androidx.compose.foundation:foundation-layout:$compose_version"
+        implementation "androidx.compose.material:material:$compose_version"
+        implementation "androidx.compose.material:material-icons-extended:$compose_version"
+        implementation "androidx.compose.foundation:foundation:$compose_version"
+        implementation "androidx.compose.animation:animation:$compose_version"
+        implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+        implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+        debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+        implementation 'androidx.activity:activity-ktx:1.4.0'
+        implementation 'androidx.core:core-ktx:1.7.0'
+        implementation "androidx.activity:activity-compose:1.4.0"
+
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
+        implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1"
+
+        implementation 'androidx.navigation:navigation-compose:2.4.2'
+
+        implementation "androidx.window:window:1.0.0"
+
+        implementation "androidx.ui:ui-framework:0.1.0-dev03"
+
+
+    }
+}
